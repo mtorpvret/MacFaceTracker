@@ -1,0 +1,295 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		28776A661CBEE52B001C3F11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28776A651CBEE52B001C3F11 /* AppDelegate.swift */; };
+		28776A681CBEE52B001C3F11 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28776A671CBEE52B001C3F11 /* ViewController.swift */; };
+		28776A6B1CBEE52B001C3F11 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28776A691CBEE52B001C3F11 /* Main.storyboard */; };
+		28776A6D1CBEE52B001C3F11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28776A6C1CBEE52B001C3F11 /* Assets.xcassets */; };
+		28776A701CBEE52B001C3F11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28776A6E1CBEE52B001C3F11 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		28776A621CBEE52B001C3F11 /* MacFaceTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacFaceTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		28776A651CBEE52B001C3F11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		28776A671CBEE52B001C3F11 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		28776A6A1CBEE52B001C3F11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		28776A6C1CBEE52B001C3F11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		28776A6F1CBEE52B001C3F11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		28776A711CBEE52B001C3F11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		28776A5F1CBEE52B001C3F11 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		28776A591CBEE52B001C3F11 = {
+			isa = PBXGroup;
+			children = (
+				28776A641CBEE52B001C3F11 /* MacFaceTracker */,
+				28776A631CBEE52B001C3F11 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		28776A631CBEE52B001C3F11 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				28776A621CBEE52B001C3F11 /* MacFaceTracker.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		28776A641CBEE52B001C3F11 /* MacFaceTracker */ = {
+			isa = PBXGroup;
+			children = (
+				28776A651CBEE52B001C3F11 /* AppDelegate.swift */,
+				28776A671CBEE52B001C3F11 /* ViewController.swift */,
+				28776A691CBEE52B001C3F11 /* Main.storyboard */,
+				28776A6C1CBEE52B001C3F11 /* Assets.xcassets */,
+				28776A6E1CBEE52B001C3F11 /* LaunchScreen.storyboard */,
+				28776A711CBEE52B001C3F11 /* Info.plist */,
+			);
+			path = MacFaceTracker;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		28776A611CBEE52B001C3F11 /* MacFaceTracker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 28776A741CBEE52B001C3F11 /* Build configuration list for PBXNativeTarget "MacFaceTracker" */;
+			buildPhases = (
+				28776A5E1CBEE52B001C3F11 /* Sources */,
+				28776A5F1CBEE52B001C3F11 /* Frameworks */,
+				28776A601CBEE52B001C3F11 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MacFaceTracker;
+			productName = MacFaceTracker;
+			productReference = 28776A621CBEE52B001C3F11 /* MacFaceTracker.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		28776A5A1CBEE52B001C3F11 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Markus Torpvret";
+				TargetAttributes = {
+					28776A611CBEE52B001C3F11 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = 28776A5D1CBEE52B001C3F11 /* Build configuration list for PBXProject "MacFaceTracker" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 28776A591CBEE52B001C3F11;
+			productRefGroup = 28776A631CBEE52B001C3F11 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				28776A611CBEE52B001C3F11 /* MacFaceTracker */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		28776A601CBEE52B001C3F11 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28776A701CBEE52B001C3F11 /* LaunchScreen.storyboard in Resources */,
+				28776A6D1CBEE52B001C3F11 /* Assets.xcassets in Resources */,
+				28776A6B1CBEE52B001C3F11 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		28776A5E1CBEE52B001C3F11 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28776A681CBEE52B001C3F11 /* ViewController.swift in Sources */,
+				28776A661CBEE52B001C3F11 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		28776A691CBEE52B001C3F11 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				28776A6A1CBEE52B001C3F11 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		28776A6E1CBEE52B001C3F11 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				28776A6F1CBEE52B001C3F11 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		28776A721CBEE52B001C3F11 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		28776A731CBEE52B001C3F11 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		28776A751CBEE52B001C3F11 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MacFaceTracker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = srcmonster.MacFaceTracker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		28776A761CBEE52B001C3F11 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MacFaceTracker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = srcmonster.MacFaceTracker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		28776A5D1CBEE52B001C3F11 /* Build configuration list for PBXProject "MacFaceTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28776A721CBEE52B001C3F11 /* Debug */,
+				28776A731CBEE52B001C3F11 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		28776A741CBEE52B001C3F11 /* Build configuration list for PBXNativeTarget "MacFaceTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28776A751CBEE52B001C3F11 /* Debug */,
+				28776A761CBEE52B001C3F11 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 28776A5A1CBEE52B001C3F11 /* Project object */;
+}
