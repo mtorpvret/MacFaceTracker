@@ -12,7 +12,23 @@
 		28776A6B1CBEE52B001C3F11 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28776A691CBEE52B001C3F11 /* Main.storyboard */; };
 		28776A6D1CBEE52B001C3F11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28776A6C1CBEE52B001C3F11 /* Assets.xcassets */; };
 		28776A701CBEE52B001C3F11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28776A6E1CBEE52B001C3F11 /* LaunchScreen.storyboard */; };
+		28776A7C1CBEE894001C3F11 /* FaceTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28776A7B1CBEE894001C3F11 /* FaceTracker.framework */; };
+		28776A7D1CBEE894001C3F11 /* FaceTracker.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 28776A7B1CBEE894001C3F11 /* FaceTracker.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		28776A7A1CBEE5D9001C3F11 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				28776A7D1CBEE894001C3F11 /* FaceTracker.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		28776A621CBEE52B001C3F11 /* MacFaceTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacFaceTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -22,6 +38,7 @@
 		28776A6C1CBEE52B001C3F11 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		28776A6F1CBEE52B001C3F11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		28776A711CBEE52B001C3F11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		28776A7B1CBEE894001C3F11 /* FaceTracker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FaceTracker.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28776A7C1CBEE894001C3F11 /* FaceTracker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +56,7 @@
 		28776A591CBEE52B001C3F11 = {
 			isa = PBXGroup;
 			children = (
+				28776A7B1CBEE894001C3F11 /* FaceTracker.framework */,
 				28776A641CBEE52B001C3F11 /* MacFaceTracker */,
 				28776A631CBEE52B001C3F11 /* Products */,
 			);
@@ -74,6 +93,7 @@
 				28776A5E1CBEE52B001C3F11 /* Sources */,
 				28776A5F1CBEE52B001C3F11 /* Frameworks */,
 				28776A601CBEE52B001C3F11 /* Resources */,
+				28776A7A1CBEE5D9001C3F11 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -251,9 +271,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = MacFaceTracker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = srcmonster.MacFaceTracker;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.utoronto.iosdevelopmentwithswift.facetracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -262,9 +287,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = MacFaceTracker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = srcmonster.MacFaceTracker;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.utoronto.iosdevelopmentwithswift.facetracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
