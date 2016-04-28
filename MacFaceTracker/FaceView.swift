@@ -28,38 +28,28 @@ class FaceView: UIView {
         super.init(coder: aDecoder)
     }
     override func drawRect(rect: CGRect) {
-        if facePoints == nil {
-            print("facepoints is nil")
-            return
-        }
-//        UIGraphicsBeginImageContextWithOptions(rect.size, false, 0)
+        guard let facePoints = facePoints else { return }
         let context = UIGraphicsGetCurrentContext()
         CGContextSetAlpha(context, 0.4)
         CGContextSetFillColorWithColor(context, UIColor.whiteColor().CGColor)
         CGContextSetStrokeColorWithColor(context, UIColor.whiteColor().CGColor)
         CGContextSetLineWidth(context, 10)
         
-        let leftEye = getMinX(facePoints!.leftEye)
-        let centerX = leftEye + (getMaxX(facePoints!.rightEye) - leftEye) / 2
+        let leftEye = getMinX(facePoints.leftEye)
+        let centerX = leftEye + (getMaxX(facePoints.rightEye) - leftEye) / 2
         let faceWidth = calcFaceWidth()
         let x =  centerX - faceWidth / 2
-        let centerY = getMaxY(facePoints!.nose)
+        let centerY = (getMaxY(facePoints.leftEye) + getMaxY(facePoints.nose)) / 2
         let faceHeight = calcFaceHeight()
-        let y = centerY - faceHeight / 2 
-//        print("width: \(calcFaceWidth()), height: \(calcFaceHeight())")
+        let y = centerY - faceHeight / 2
         CGContextAddEllipseInRect(context, CGRect(x: x, y: y, width: faceWidth, height: faceHeight))
         CGContextDrawPath(context, .Fill)//Stroke)
-        
-//        let img = UIGraphicsGetImageFromCurrentImageContext()
-//        UIGraphicsEndImageContext()
     }
     
     func calcFaceHeight() -> CGFloat {
         let u = (getMaxY(facePoints!.leftEye) - getMinY(facePoints!.leftBrow)) / 0.382
- //       print("u: \(u)")
         let l = ((getMinY(facePoints!.innerMouth) + getMaxY(facePoints!.innerMouth) / 2) - getMaxY(facePoints!.nose)) / 0.618 -
         (getMinY(facePoints!.leftEye) + getMaxY(facePoints!.leftEye)) / 4
- //       print("l: \(l)")
         return u+l
     }
     
@@ -69,7 +59,6 @@ class FaceView: UIView {
     
     func getMaxY(points: [CGPoint]) -> CGFloat {
         let max = points.reduce(0, combine: { (y:CGFloat, p: CGPoint) -> CGFloat in y > p.y ? y : p.y })
- //       print("points: \(points) - max=\(max)")
         return max
     }
 
