@@ -18,18 +18,43 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6we-2H-t6V">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
                                 <connections>
                                     <segue destination="bd0-fr-sof" kind="embed" identifier="faceTrackerEmbed" id="cxG-n4-JNk"/>
                                 </connections>
                             </containerView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="M8g-Of-Sif">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1fE-nr-rPY">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="44"/>
+                                        <state key="normal" title="Options"/>
+                                        <connections>
+                                            <action selector="optionsButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ccL-jg-9ID"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ec-Um-Nqr">
+                                        <rect key="frame" x="300" y="0.0" width="300" height="44"/>
+                                        <state key="normal" title="Share"/>
+                                        <connections>
+                                            <action selector="shareButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t9D-Gu-ttN"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="tL0-An-Blv"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="6we-2H-t6V" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="72p-nV-fbi"/>
+                            <constraint firstItem="M8g-Of-Sif" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="BTS-R0-MEY"/>
                             <constraint firstAttribute="trailing" secondItem="6we-2H-t6V" secondAttribute="trailing" id="GZw-AJ-NXg"/>
-                            <constraint firstItem="6we-2H-t6V" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="kOo-Vh-UrD"/>
+                            <constraint firstAttribute="trailing" secondItem="M8g-Of-Sif" secondAttribute="trailing" id="KBc-j3-Lti"/>
+                            <constraint firstItem="M8g-Of-Sif" firstAttribute="top" secondItem="6we-2H-t6V" secondAttribute="bottom" id="UiY-GS-eNh"/>
                             <constraint firstItem="6we-2H-t6V" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="q7v-XU-Vnb"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="M8g-Of-Sif" secondAttribute="bottom" id="uAO-92-vtS"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -46,7 +71,7 @@
                         <viewControllerLayoutGuide type="bottom" id="2lx-9Q-m6d"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="eyY-u5-xk3">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>

@@ -1,5 +1,5 @@
 //
-//  FaceView.swift
+//  RotatingFaceView.swift
 //  MacFaceTracker
 //
 //  Created by Markus Torpvret on 2016-04-25.
@@ -16,7 +16,7 @@
 import UIKit
 import FaceTracker
 
-class FaceView: UIView {
+class RotatingFaceView: UIView {
     var facePoints: FacePoints?
     
     override init(frame: CGRect) {
@@ -42,14 +42,31 @@ class FaceView: UIView {
         let centerY = (getMaxY(facePoints.leftEye) + getMaxY(facePoints.nose)) / 2
         let faceHeight = calcFaceHeight()
         let y = centerY - faceHeight / 2
-        CGContextAddEllipseInRect(context, CGRect(x: x, y: y, width: faceWidth, height: faceHeight))
+        CGContextSaveGState(context)
+        // calculate angle to rotate
+        let deltaY = getMaxY(facePoints.rightEye) - getMaxY(facePoints.leftEye)
+        let deltaX = getMinX(facePoints.rightEye) - getMinX(facePoints.leftEye)
+        //angleInDegrees = arctan(deltaY / deltaX) * 180 / PI
+        let angle: CGFloat = atan(deltaY/deltaX)
+        CGContextRotateCTM(context, angle)
+        // calculate rotated x & y
+        let rotatedCenterX = (centerY*cos(angle) - centerX*sin(angle))
+        let rotationDeltaX = rotatedCenterX - centerX
+        let rotatedCenterY = (centerY*sin(angle) + centerX*cos(angle))
+        let rotationDeltaY = rotatedCenterY - centerY
+       // print("rotating \(angle*180/3.14159) degrees: (\(x), \(y)) -> (\(rotatedX), \(rotatedY))")
+        CGContextAddEllipseInRect(context, CGRect(x: x-rotationDeltaX, y: y+rotationDeltaY, width: faceWidth, height: faceHeight))
         CGContextDrawPath(context, .Fill)//Stroke)
+    
+        CGContextAddRect(context, CGRect(x: rotatedCenterX, y: rotatedCenterY, width: faceWidth/2, height: faceHeight/2))
+        CGContextDrawPath(context, .Stroke)
+        CGContextRestoreGState(context)
     }
     
     func calcFaceHeight() -> CGFloat {
         let u = (getMaxY(facePoints!.leftEye) - getMinY(facePoints!.leftBrow)) / 0.382
         let l = ((getMinY(facePoints!.innerMouth) + getMaxY(facePoints!.innerMouth) / 2) - getMaxY(facePoints!.nose)) / 0.618 -
-            (getMinY(facePoints!.leftEye) + getMaxY(facePoints!.leftEye)) / 4
+        (getMinY(facePoints!.leftEye) + getMaxY(facePoints!.leftEye)) / 4
         return u+l
     }
     
@@ -61,11 +78,11 @@ class FaceView: UIView {
         let max = points.reduce(0, combine: { (y:CGFloat, p: CGPoint) -> CGFloat in y > p.y ? y : p.y })
         return max
     }
-    
+
     func getMinY(points: [CGPoint]) -> CGFloat {
         return points.reduce(10000, combine: { (y:CGFloat, p: CGPoint) -> CGFloat in y < p.y ? y : p.y })
     }
-    
+
     func getMaxX(points: [CGPoint]) -> CGFloat {
         return points.reduce(0, combine: { (x:CGFloat, p: CGPoint) -> CGFloat in x > p.x ? x : p.x })
     }
@@ -73,7 +90,7 @@ class FaceView: UIView {
     func getMinX(points: [CGPoint]) -> CGFloat {
         return points.reduce(10000, combine: { (x:CGFloat, p: CGPoint) -> CGFloat in x < p.x ? x : p.x })
     }
-    
+
     func update(facePoints: FacePoints) {
         self.facePoints = facePoints
         self.setNeedsDisplay()

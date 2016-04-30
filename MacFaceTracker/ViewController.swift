@@ -27,6 +27,14 @@ class ViewController: UIViewController, FaceTrackerViewControllerDelegate {
         view.addSubview(brows!)
     }
 
+    @IBAction func optionsButtonPressed(sender: UIButton) {
+        NSLog("Options button pressed")
+    }
+    
+    @IBAction func shareButtonPressed(sender: UIButton) {
+        NSLog("Share button pressed")
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "faceTrackerEmbed" {
             faceTrackerViewController = segue.destinationViewController as? FaceTrackerViewController

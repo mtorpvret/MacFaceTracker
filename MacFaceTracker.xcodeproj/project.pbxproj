@@ -17,7 +17,8 @@
 		28A23CCE1CCE9EC200BBAFB1 /* MouthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A23CCD1CCE9EC200BBAFB1 /* MouthView.swift */; };
 		28A23CD01CCEA7FB00BBAFB1 /* EyebrowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A23CCF1CCEA7FB00BBAFB1 /* EyebrowView.swift */; };
 		28A23CD41CCEAEDA00BBAFB1 /* BrowPattern.png in Resources */ = {isa = PBXBuildFile; fileRef = 28A23CD31CCEAEDA00BBAFB1 /* BrowPattern.png */; };
-		28A23CD61CCEB50E00BBAFB1 /* FaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A23CD51CCEB50E00BBAFB1 /* FaceView.swift */; };
+		28A23CD61CCEB50E00BBAFB1 /* RotatingFaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A23CD51CCEB50E00BBAFB1 /* RotatingFaceView.swift */; };
+		28A23CD81CD4911400BBAFB1 /* FaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A23CD71CD4911400BBAFB1 /* FaceView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -46,7 +47,8 @@
 		28A23CCD1CCE9EC200BBAFB1 /* MouthView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MouthView.swift; sourceTree = "<group>"; };
 		28A23CCF1CCEA7FB00BBAFB1 /* EyebrowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EyebrowView.swift; sourceTree = "<group>"; };
 		28A23CD31CCEAEDA00BBAFB1 /* BrowPattern.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BrowPattern.png; sourceTree = "<group>"; };
-		28A23CD51CCEB50E00BBAFB1 /* FaceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceView.swift; sourceTree = "<group>"; };
+		28A23CD51CCEB50E00BBAFB1 /* RotatingFaceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotatingFaceView.swift; sourceTree = "<group>"; };
+		28A23CD71CD4911400BBAFB1 /* FaceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +92,8 @@
 				28776A711CBEE52B001C3F11 /* Info.plist */,
 				28A23CCD1CCE9EC200BBAFB1 /* MouthView.swift */,
 				28A23CCF1CCEA7FB00BBAFB1 /* EyebrowView.swift */,
-				28A23CD51CCEB50E00BBAFB1 /* FaceView.swift */,
+				28A23CD51CCEB50E00BBAFB1 /* RotatingFaceView.swift */,
+				28A23CD71CD4911400BBAFB1 /* FaceView.swift */,
 			);
 			path = MacFaceTracker;
 			sourceTree = "<group>";
@@ -172,7 +175,8 @@
 				28776A681CBEE52B001C3F11 /* ViewController.swift in Sources */,
 				28776A661CBEE52B001C3F11 /* AppDelegate.swift in Sources */,
 				28A23CCE1CCE9EC200BBAFB1 /* MouthView.swift in Sources */,
-				28A23CD61CCEB50E00BBAFB1 /* FaceView.swift in Sources */,
+				28A23CD61CCEB50E00BBAFB1 /* RotatingFaceView.swift in Sources */,
+				28A23CD81CD4911400BBAFB1 /* FaceView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
