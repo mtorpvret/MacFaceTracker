@@ -57,6 +57,11 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="M8g-Of-Sif" secondAttribute="bottom" id="uAO-92-vtS"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="faceTrackerContainerView" destination="6we-2H-t6V" id="jOf-ey-eoY"/>
+                        <outlet property="optionsButton" destination="1fE-nr-rPY" id="HxR-eU-tEp"/>
+                        <outlet property="shareButton" destination="5Ec-Um-Nqr" id="hhS-MD-sNv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

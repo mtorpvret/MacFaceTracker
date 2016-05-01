@@ -14,6 +14,12 @@
 		28776A701CBEE52B001C3F11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28776A6E1CBEE52B001C3F11 /* LaunchScreen.storyboard */; };
 		28776A7C1CBEE894001C3F11 /* FaceTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28776A7B1CBEE894001C3F11 /* FaceTracker.framework */; };
 		28776A7D1CBEE894001C3F11 /* FaceTracker.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 28776A7B1CBEE894001C3F11 /* FaceTracker.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		287AEDE81CD52F1500682D23 /* ClownHair.png in Resources */ = {isa = PBXBuildFile; fileRef = 287AEDE71CD52F1500682D23 /* ClownHair.png */; };
+		287AEDEA1CD5376300682D23 /* UIimageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287AEDE91CD5376300682D23 /* UIimageExtension.swift */; };
+		287AEDEC1CD5612200682D23 /* EyeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287AEDEB1CD5612200682D23 /* EyeView.swift */; };
+		287AEDEE1CD5D6F400682D23 /* NoseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287AEDED1CD5D6F400682D23 /* NoseView.swift */; };
+		287AEDF01CD5DAD300682D23 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287AEDEF1CD5DAD300682D23 /* Util.swift */; };
+		287AEDF21CD5DFB800682D23 /* HairView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287AEDF11CD5DFB800682D23 /* HairView.swift */; };
 		28A23CCE1CCE9EC200BBAFB1 /* MouthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A23CCD1CCE9EC200BBAFB1 /* MouthView.swift */; };
 		28A23CD01CCEA7FB00BBAFB1 /* EyebrowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A23CCF1CCEA7FB00BBAFB1 /* EyebrowView.swift */; };
 		28A23CD41CCEAEDA00BBAFB1 /* BrowPattern.png in Resources */ = {isa = PBXBuildFile; fileRef = 28A23CD31CCEAEDA00BBAFB1 /* BrowPattern.png */; };
@@ -44,6 +50,12 @@
 		28776A6F1CBEE52B001C3F11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		28776A711CBEE52B001C3F11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		28776A7B1CBEE894001C3F11 /* FaceTracker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FaceTracker.framework; sourceTree = "<group>"; };
+		287AEDE71CD52F1500682D23 /* ClownHair.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ClownHair.png; sourceTree = "<group>"; };
+		287AEDE91CD5376300682D23 /* UIimageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIimageExtension.swift; sourceTree = "<group>"; };
+		287AEDEB1CD5612200682D23 /* EyeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EyeView.swift; sourceTree = "<group>"; };
+		287AEDED1CD5D6F400682D23 /* NoseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoseView.swift; sourceTree = "<group>"; };
+		287AEDEF1CD5DAD300682D23 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		287AEDF11CD5DFB800682D23 /* HairView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HairView.swift; sourceTree = "<group>"; };
 		28A23CCD1CCE9EC200BBAFB1 /* MouthView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MouthView.swift; sourceTree = "<group>"; };
 		28A23CCF1CCEA7FB00BBAFB1 /* EyebrowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EyebrowView.swift; sourceTree = "<group>"; };
 		28A23CD31CCEAEDA00BBAFB1 /* BrowPattern.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BrowPattern.png; sourceTree = "<group>"; };
@@ -83,6 +95,7 @@
 		28776A641CBEE52B001C3F11 /* MacFaceTracker */ = {
 			isa = PBXGroup;
 			children = (
+				287AEDE71CD52F1500682D23 /* ClownHair.png */,
 				28A23CD31CCEAEDA00BBAFB1 /* BrowPattern.png */,
 				28776A651CBEE52B001C3F11 /* AppDelegate.swift */,
 				28776A671CBEE52B001C3F11 /* ViewController.swift */,
@@ -92,8 +105,13 @@
 				28776A711CBEE52B001C3F11 /* Info.plist */,
 				28A23CCD1CCE9EC200BBAFB1 /* MouthView.swift */,
 				28A23CCF1CCEA7FB00BBAFB1 /* EyebrowView.swift */,
+				287AEDEB1CD5612200682D23 /* EyeView.swift */,
 				28A23CD51CCEB50E00BBAFB1 /* RotatingFaceView.swift */,
 				28A23CD71CD4911400BBAFB1 /* FaceView.swift */,
+				287AEDE91CD5376300682D23 /* UIimageExtension.swift */,
+				287AEDED1CD5D6F400682D23 /* NoseView.swift */,
+				287AEDEF1CD5DAD300682D23 /* Util.swift */,
+				287AEDF11CD5DFB800682D23 /* HairView.swift */,
 			);
 			path = MacFaceTracker;
 			sourceTree = "<group>";
@@ -158,6 +176,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				28776A701CBEE52B001C3F11 /* LaunchScreen.storyboard in Resources */,
+				287AEDE81CD52F1500682D23 /* ClownHair.png in Resources */,
 				28776A6D1CBEE52B001C3F11 /* Assets.xcassets in Resources */,
 				28A23CD41CCEAEDA00BBAFB1 /* BrowPattern.png in Resources */,
 				28776A6B1CBEE52B001C3F11 /* Main.storyboard in Resources */,
@@ -177,6 +196,11 @@
 				28A23CCE1CCE9EC200BBAFB1 /* MouthView.swift in Sources */,
 				28A23CD61CCEB50E00BBAFB1 /* RotatingFaceView.swift in Sources */,
 				28A23CD81CD4911400BBAFB1 /* FaceView.swift in Sources */,
+				287AEDEC1CD5612200682D23 /* EyeView.swift in Sources */,
+				287AEDF01CD5DAD300682D23 /* Util.swift in Sources */,
+				287AEDF21CD5DFB800682D23 /* HairView.swift in Sources */,
+				287AEDEE1CD5D6F400682D23 /* NoseView.swift in Sources */,
+				287AEDEA1CD5376300682D23 /* UIimageExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
