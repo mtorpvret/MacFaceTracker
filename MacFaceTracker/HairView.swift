@@ -35,8 +35,6 @@ class HairView: UIView {
         let hairHeight = (hairView.image!.size.height / hairView.image!.size.width) * hairWidth
         
         hairView.transform = CGAffineTransformIdentity
-        
-//        hairView.frame = CGRectMake(eyeToEyeCenter.x - hairWidth / 2, eyeToEyeCenter.y - 1.3 * hairHeight, hairWidth, hairHeight)
         hairView.frame = CGRectMake(eyeToEyeCenter.x - hairWidth / 2, eyeToEyeCenter.y - 0.8 * hairHeight, hairWidth, hairHeight)
         hairView.hidden = false
         

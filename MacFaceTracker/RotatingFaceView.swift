@@ -27,7 +27,7 @@ class RotatingFaceView: UIView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-    override func drawRect(rect: CGRect) {
+    func olddrawRect(rect: CGRect) {
         guard let facePoints = facePoints else { return }
         let context = UIGraphicsGetCurrentContext()
         CGContextSetAlpha(context, 0.4)
@@ -62,6 +62,61 @@ class RotatingFaceView: UIView {
         CGContextDrawPath(context, .Stroke)
         CGContextRestoreGState(context)
     }
+    
+    override func drawRect(rect: CGRect) {
+        guard let leftEye = facePoints?.leftEye else { return }
+        guard let rightEye = facePoints?.rightEye else { return }
+        guard let nose = facePoints?.nose else { return }
+        
+        let context = UIGraphicsGetCurrentContext()
+        CGContextSetAlpha(context, 0.4)
+        CGContextSetFillColorWithColor(context, UIColor.whiteColor().CGColor)
+        CGContextSetStrokeColorWithColor(context, UIColor.redColor().CGColor)
+        CGContextSetLineWidth(context, 10)
+        
+        let leftEyeMinX = getMinX(leftEye)
+        let centerX = leftEyeMinX + (getMaxX(rightEye) - leftEyeMinX) / 2
+        let faceWidth = calcFaceWidth()
+        let x =  centerX - faceWidth / 2
+        let centerY = (getMaxY(leftEye) + getMaxY(nose)) / 2
+        let faceHeight = calcFaceHeight()
+        let y = centerY - faceHeight / 2
+        CGContextAddEllipseInRect(context, CGRect(x: x, y: y, width: faceWidth, height: faceHeight))
+        CGContextDrawPath(context, .Fill)
+
+        
+        // Compute the hair frame
+//        let eyeCornerDist = sqrt(pow(leftEye[0].x - rightEye[5].x, 2) + pow(leftEye[0].y - rightEye[5].y, 2))
+//        let eyeToEyeCenter = CGPointMake((leftEye[0].x + rightEye[5].x) / 2, (leftEye[0].y + rightEye[5].y) / 2)
+        
+//        frame = CGRectMake(eyeToEyeCenter.x - faceWidth / 2, eyeToEyeCenter.y - 0.8 * faceHeight, faceWidth, faceHeight)
+//        frame = CGRectMake(0, 0, faceWidth, faceHeight)
+        
+        transform = CGAffineTransformIdentity
+        setAnchorPoint(CGPointMake(0.5, 0.5), forView: self)
+        
+        let angle = atan2(rightEye[5].y - leftEye[0].y, rightEye[5].x - leftEye[0].x)
+        transform = CGAffineTransformMakeRotation(angle)
+    }
+    
+    func setAnchorPoint(anchorPoint: CGPoint, forView view: UIView) {
+        var newPoint = CGPointMake(view.bounds.size.width * anchorPoint.x, view.bounds.size.height * anchorPoint.y)
+        var oldPoint = CGPointMake(view.bounds.size.width * view.layer.anchorPoint.x, view.bounds.size.height * view.layer.anchorPoint.y)
+        
+        newPoint = CGPointApplyAffineTransform(newPoint, view.transform)
+        oldPoint = CGPointApplyAffineTransform(oldPoint, view.transform)
+        
+        var position = view.layer.position
+        position.x -= oldPoint.x
+        position.x += newPoint.x
+        
+        position.y -= oldPoint.y
+        position.y += newPoint.y
+        
+        view.layer.position = position
+        view.layer.anchorPoint = anchorPoint
+    }
+
     
     func calcFaceHeight() -> CGFloat {
         let u = (getMaxY(facePoints!.leftEye) - getMinY(facePoints!.leftBrow)) / 0.382
