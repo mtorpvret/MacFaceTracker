@@ -18,14 +18,14 @@ class ViewController: UIViewController, FaceTrackerViewControllerDelegate {
     
     var mouth: MouthView?
     var brows: EyebrowView?
-    var face: RotatingFaceView?
+    var face: FaceView?
     var eyes: EyeView?
     var nose: NoseView?
     var hair: HairView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        face = RotatingFaceView(frame: self.view.bounds)
+        face = FaceView(frame: self.view.bounds)
         self.view.insertSubview(face!, aboveSubview: faceTrackerContainerView)
         mouth = MouthView(frame: self.view.bounds)
         self.view.insertSubview(mouth!, aboveSubview: face!)
