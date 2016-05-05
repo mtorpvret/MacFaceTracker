@@ -38,28 +38,10 @@ class HairView: UIView {
         hairView.frame = CGRectMake(eyeToEyeCenter.x - hairWidth / 2, eyeToEyeCenter.y - 0.8 * hairHeight, hairWidth, hairHeight)
         hairView.hidden = false
         
-        setAnchorPoint(CGPointMake(0.5, 1.0), forView: hairView)
+        hairView.setAnchorPoint(CGPointMake(0.5, 0.9))
         
         let angle = atan2(rightEye[5].y - leftEye[0].y, rightEye[5].x - leftEye[0].x)
         hairView.transform = CGAffineTransformMakeRotation(angle)
-    }
-
-    func setAnchorPoint(anchorPoint: CGPoint, forView view: UIView) {
-        var newPoint = CGPointMake(view.bounds.size.width * anchorPoint.x, view.bounds.size.height * anchorPoint.y)
-        var oldPoint = CGPointMake(view.bounds.size.width * view.layer.anchorPoint.x, view.bounds.size.height * view.layer.anchorPoint.y)
-        
-        newPoint = CGPointApplyAffineTransform(newPoint, view.transform)
-        oldPoint = CGPointApplyAffineTransform(oldPoint, view.transform)
-        
-        var position = view.layer.position
-        position.x -= oldPoint.x
-        position.x += newPoint.x
-        
-        position.y -= oldPoint.y
-        position.y += newPoint.y
-        
-        view.layer.position = position
-        view.layer.anchorPoint = anchorPoint
     }
 
     func update(leftEye leftEye: [CGPoint], rightEye: [CGPoint]) {

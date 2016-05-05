@@ -50,30 +50,11 @@ class FaceView: UIView {
         CGContextDrawPath(context, .Fill)
         
         transform = CGAffineTransformIdentity
-        setAnchorPoint(CGPointMake(0.5, 0.5), forView: self)
+        setAnchorPoint(CGPointMake(0.5, 0.5))
         
         let angle = atan2(rightEye[5].y - leftEye[0].y, rightEye[5].x - leftEye[0].x)
         transform = CGAffineTransformMakeRotation(angle)
     }
-    
-    func setAnchorPoint(anchorPoint: CGPoint, forView view: UIView) {
-        var newPoint = CGPointMake(view.bounds.size.width * anchorPoint.x, view.bounds.size.height * anchorPoint.y)
-        var oldPoint = CGPointMake(view.bounds.size.width * view.layer.anchorPoint.x, view.bounds.size.height * view.layer.anchorPoint.y)
-        
-        newPoint = CGPointApplyAffineTransform(newPoint, view.transform)
-        oldPoint = CGPointApplyAffineTransform(oldPoint, view.transform)
-        
-        var position = view.layer.position
-        position.x -= oldPoint.x
-        position.x += newPoint.x
-        
-        position.y -= oldPoint.y
-        position.y += newPoint.y
-        
-        view.layer.position = position
-        view.layer.anchorPoint = anchorPoint
-    }
-
     
     func calcFaceHeight() -> CGFloat {
         let u = (getMaxY(facePoints!.leftEye) - getMinY(facePoints!.leftBrow)) / 0.382
@@ -86,23 +67,6 @@ class FaceView: UIView {
         return (getMaxX(facePoints!.nose) - getMinX(facePoints!.nose)) / 0.309
     }
     
-    func getMaxY(points: [CGPoint]) -> CGFloat {
-        let max = points.reduce(0, combine: { (y:CGFloat, p: CGPoint) -> CGFloat in y > p.y ? y : p.y })
-        return max
-    }
-
-    func getMinY(points: [CGPoint]) -> CGFloat {
-        return points.reduce(10000, combine: { (y:CGFloat, p: CGPoint) -> CGFloat in y < p.y ? y : p.y })
-    }
-
-    func getMaxX(points: [CGPoint]) -> CGFloat {
-        return points.reduce(0, combine: { (x:CGFloat, p: CGPoint) -> CGFloat in x > p.x ? x : p.x })
-    }
-    
-    func getMinX(points: [CGPoint]) -> CGFloat {
-        return points.reduce(10000, combine: { (x:CGFloat, p: CGPoint) -> CGFloat in x < p.x ? x : p.x })
-    }
-
     func update(facePoints: FacePoints) {
         self.facePoints = facePoints
         self.setNeedsDisplay()
