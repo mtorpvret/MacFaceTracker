@@ -27,7 +27,6 @@ class HairView: UIView {
         guard let leftEye = leftEye else { return }
         guard let rightEye = rightEye else { return }
         
-        // Compute the hair frame
         let eyeCornerDist = sqrt(pow(leftEye[0].x - rightEye[5].x, 2) + pow(leftEye[0].y - rightEye[5].y, 2))
         let eyeToEyeCenter = CGPointMake((leftEye[0].x + rightEye[5].x) / 2, (leftEye[0].y + rightEye[5].y) / 2)
         

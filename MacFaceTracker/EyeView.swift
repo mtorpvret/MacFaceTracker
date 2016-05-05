@@ -21,15 +21,14 @@ class EyeView: UIView {
         super.init(coder: aDecoder)
     }
     override func drawRect(rect: CGRect) {
+        guard let leftEye = leftEye else { return }
+        guard let rightEye = rightEye else { return }
+        
         let color = UIColor.blackColor()
         color.set()
         
-        if let points = leftEye {
-            drawEye(points)
-        }
-        if let points2 = rightEye {
-            drawEye(points2)
-        }
+        drawEye(leftEye)
+        drawEye(rightEye)
     }
 
     func drawEye(points: [CGPoint]) {
@@ -46,7 +45,22 @@ class EyeView: UIView {
         let x = UIBezierPath(CGPath: path)
         x.lineWidth = 2
         x.stroke()
+ 
+        let eyeWidth = sqrt(pow(points[0].x - points[5].x, 2) + pow(points[0].y - points[5].y, 2))
+        let eyeCenter = CGPointMake((points[0].x + points[5].x) / 2, (points[0].y + points[5].y) / 2)
+        let irisWidth = eyeWidth*0.4
         
+        // Draw Iris
+        let context = UIGraphicsGetCurrentContext()
+        CGContextSetFillColorWithColor(context, UIColor.blueColor().CGColor)
+        CGContextAddEllipseInRect(context, CGRect(x: eyeCenter.x - irisWidth/2, y: eyeCenter.y - irisWidth/2, width: irisWidth, height: irisWidth))
+        CGContextDrawPath(context, .Fill)
+
+        // Draw pupil
+        let pupilWidth = irisWidth * 0.4
+        CGContextSetFillColorWithColor(context, UIColor.blackColor().CGColor)
+        CGContextAddEllipseInRect(context, CGRect(x: eyeCenter.x - pupilWidth/2, y: eyeCenter.y - pupilWidth/2, width: pupilWidth, height: pupilWidth))
+        CGContextDrawPath(context, .Fill)
         
     }
 
