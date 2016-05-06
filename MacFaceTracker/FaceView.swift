@@ -5,12 +5,15 @@
 //  Created by Markus Torpvret on 2016-04-25.
 //  Copyright © 2016 Markus Torpvret. All rights reserved.
 //
-// Ansiktets höjd
-//  överdel = (högsta y på ögonbryn - lägsta y på öga) / (1 - 0.618)
-//  underdel = (lägsta y på näsa - mitten av munnen) / (1-0.618) * 1.618 - halva ögonhöjden
+// Calculations below only works as intended when there is no face rotation, otherwise compensation is needed.
+// Should use trigonometry, but too lazy so far.
 //
-// Ansiktets bredd
-//  bredden = (högsta x på näsa - lägsta x på näsa) / (1-0.618) * 1.618
+// Face height
+//  upper part = (max y of brows - min y of eye) / (1 - 0.618)
+//  lower part = (min y of nose - middle y of mouth) / (1-0.618) * 1.618 - half eye height
+//
+// Face width
+//  width = (max x of nose - min x of nose) / (1-0.618) * 1.618
 //
 
 import UIKit

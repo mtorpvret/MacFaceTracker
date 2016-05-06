@@ -37,7 +37,6 @@ class ViewController: UIViewController, FaceTrackerViewControllerDelegate {
         self.view.insertSubview(nose!, aboveSubview: face!)
         hair = HairView(frame: self.view.bounds)
         self.view.insertSubview(hair!, aboveSubview: brows!)
-        print("bounds: \(self.view.bounds)")
     }
 
     @IBAction func optionsButtonPressed(sender: UIButton) {
