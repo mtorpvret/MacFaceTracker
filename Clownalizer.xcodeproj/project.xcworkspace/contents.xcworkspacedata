@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:MacFaceTracker.xcodeproj">
+      location = "self:/Users/markus/Projekt/ios/MacFaceTracker/Clownalizer.xcodeproj">
    </FileRef>
 </Workspace>
