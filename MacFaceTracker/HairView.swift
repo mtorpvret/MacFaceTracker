@@ -27,7 +27,8 @@ class HairView: UIView {
         guard let leftEye = leftEye else { return }
         guard let rightEye = rightEye else { return }
         
-        let eyeCornerDist = sqrt(pow(leftEye[0].x - rightEye[5].x, 2) + pow(leftEye[0].y - rightEye[5].y, 2))
+        
+        let eyeCornerDist = distanceFrom(leftEye[0], to: rightEye[5])
         let eyeToEyeCenter = CGPointMake((leftEye[0].x + rightEye[5].x) / 2, (leftEye[0].y + rightEye[5].y) / 2)
         
         let hairWidth = 2.85 * eyeCornerDist
@@ -39,7 +40,7 @@ class HairView: UIView {
         
         hairView.setAnchorPoint(CGPointMake(0.5, 0.9))
         
-        let angle = atan2(rightEye[5].y - leftEye[0].y, rightEye[5].x - leftEye[0].x)
+        let angle = calcAngleFrom(leftEye[0], to: rightEye[5])
         hairView.transform = CGAffineTransformMakeRotation(angle)
     }
 

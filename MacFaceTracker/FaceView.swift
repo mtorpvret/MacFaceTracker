@@ -36,7 +36,6 @@ class FaceView: UIView {
         let context = UIGraphicsGetCurrentContext()
         CGContextSetAlpha(context, 0.4)
         CGContextSetFillColorWithColor(context, UIColor.whiteColor().CGColor)
-        CGContextSetStrokeColorWithColor(context, UIColor.redColor().CGColor)
         CGContextSetLineWidth(context, 10)
         
         let leftEyeMinX = getMinX(leftEye)
@@ -52,7 +51,7 @@ class FaceView: UIView {
         transform = CGAffineTransformIdentity
         setAnchorPoint(CGPointMake(0.5, 0.5))
         
-        let angle = atan2(rightEye[5].y - leftEye[0].y, rightEye[5].x - leftEye[0].x)
+        let angle = calcAngleFrom(leftEye[0], to: rightEye[5])
         transform = CGAffineTransformMakeRotation(angle)
     }
     

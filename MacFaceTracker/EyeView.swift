@@ -29,17 +29,16 @@ class EyeView: UIView {
     }
 
     func drawEye(points: [CGPoint]) {
-//        let eyeWidth = sqrt(pow(points[0].x - points[5].x, 2) + pow(points[0].y - points[5].y, 2))
-        let eyeHeight = sqrt(pow(points[2].x - points[8].x, 2) + pow(points[2].y - points[8].y, 2))
+        let eyeHeight = distanceFrom(points[2], to: points[8])
         let eyeCenter = CGPointMake((points[0].x + points[5].x) / 2, (points[0].y + points[5].y) / 2)
-        let irisWidth = eyeHeight //eyeWidth*0.4
+        let irisWidth = eyeHeight
         
         // Draw Iris
         let context = UIGraphicsGetCurrentContext()
         CGContextSetFillColorWithColor(context, UIColor.blueColor().CGColor)
         let iPath = CGPathCreateMutable()
-        CGPathAddArc(iPath, nil, eyeCenter.x, eyeCenter.y, irisWidth/2, calcAngle(eyeCenter, p2: points[3]), calcAngle(eyeCenter, p2: points[7]), true)
-        CGPathAddArc(iPath, nil, eyeCenter.x, eyeCenter.y, irisWidth/2, calcAngle(eyeCenter, p2: points[8]), calcAngle(eyeCenter, p2: points[2]), true)
+        CGPathAddArc(iPath, nil, eyeCenter.x, eyeCenter.y, irisWidth/2, calcAngleFrom(eyeCenter, to: points[3]), calcAngleFrom(eyeCenter, to: points[7]), true)
+        CGPathAddArc(iPath, nil, eyeCenter.x, eyeCenter.y, irisWidth/2, calcAngleFrom(eyeCenter, to: points[8]), calcAngleFrom(eyeCenter, to: points[2]), true)
         CGPathCloseSubpath(iPath)
         CGContextAddPath(context, iPath)
         CGContextDrawPath(context, .Fill)

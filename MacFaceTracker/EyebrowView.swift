@@ -12,54 +12,51 @@ class EyebrowView: UIView {
     var leftBrow: [CGPoint]?
     var rightBrow: [CGPoint]?
     
+    let browPattern: UIImage?
+    
     override init(frame: CGRect) {
+        browPattern = UIImage(named: "BrowPattern.png")
         super.init(frame: frame)
         backgroundColor = UIColor.clearColor()
     }
     
     required init?(coder aDecoder: NSCoder) {
+        browPattern = UIImage(named: "BrowPattern.png")
         super.init(coder: aDecoder)
     }
+
     override func drawRect(rect: CGRect) {
-        let browPattern = UIImage(named: "BrowPattern.png")
-        let color = UIColor(patternImage: browPattern!)
+        guard let leftBrow = leftBrow else { return }
+        guard let rightBrow = rightBrow else { return }
         
-        color.set()
-        
-        if let points = leftBrow {
-            let path = CGPathCreateMutable()
-            var startPoint: CGPoint?
-            for (index, point) in points.enumerate() {
-                if(index == 0) {
-                    startPoint = point
-                    CGPathMoveToPoint(path, nil, point.x, point.y);
-                }
-                else {
-                    CGPathAddLineToPoint(path, nil, point.x, point.y);
-                }
-            }
-            CGPathAddLineToPoint(path, nil, startPoint!.x, startPoint!.y)
-            CGPathCloseSubpath(path)
-            let x = UIBezierPath(CGPath: path)
-            x.fill()
-            
-            let iPath = CGPathCreateMutable()
-            if let points = rightBrow {
-                for (index, point) in points.enumerate() {
-                    if(index == 0) {
-                        CGPathMoveToPoint(iPath, nil, point.x, point.y);
-                    }
-                    else {
-                        CGPathAddLineToPoint(iPath, nil, point.x, point.y);
-                    }
-                }
-            }
-            CGPathCloseSubpath(iPath)
-           // CGContextSetBlendMode(UIGraphicsGetCurrentContext(), CGBlendMode.Lighten)
-            let y = UIBezierPath(CGPath: iPath)
-            y.fill()
-            
+        drawBrow(leftBrow)
+        drawBrow(rightBrow)
         }
+    
+
+    func drawBrow(points: [CGPoint]) {
+        var color = UIColor.brownColor()
+        if let browPattern = browPattern {
+            color = UIColor(patternImage: browPattern)
+        }
+        
+        let path = CGPathCreateMutable()
+        var startPoint: CGPoint?
+        for (index, point) in points.enumerate() {
+            if(index == 0) {
+                startPoint = point
+                CGPathMoveToPoint(path, nil, point.x, point.y);
+            }
+            else {
+                CGPathAddLineToPoint(path, nil, point.x, point.y);
+            }
+        }
+        CGPathAddLineToPoint(path, nil, startPoint!.x, startPoint!.y)
+        CGPathCloseSubpath(path)
+        let context = UIGraphicsGetCurrentContext()
+        CGContextAddPath(context, path)
+        CGContextSetFillColorWithColor(context, color.CGColor)
+        CGContextDrawPath(context, .Fill)
     }
     
     func update(leftBrow leftBrow: [CGPoint], rightBrow: [CGPoint]) {
