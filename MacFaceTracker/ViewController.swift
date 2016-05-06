@@ -40,13 +40,28 @@ class ViewController: UIViewController, FaceTrackerViewControllerDelegate {
     }
 
     @IBAction func optionsButtonPressed(sender: UIButton) {
-        print("Options button pressed")
+        faceTrackerViewController?.swapCamera()
     }
     
     @IBAction func shareButtonPressed(sender: UIButton) {
-        print("snapshot")
-        hair!.hidden = true
         makeSnapshot()
+        flash()
+    }
+
+    func flash() {
+        if let wnd = self.view{
+            
+            let v = UIView(frame: wnd.bounds)
+            v.backgroundColor = UIColor.whiteColor()
+            v.alpha = 1
+            
+            wnd.addSubview(v)
+            UIView.animateWithDuration(0.5, animations: {
+                v.alpha = 0.0
+                }, completion: {(finished:Bool) in
+                    v.removeFromSuperview()
+            })
+        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -108,13 +123,34 @@ class ViewController: UIViewController, FaceTrackerViewControllerDelegate {
 
     func makeSnapshot() {
         hideButtons()
-        UIGraphicsBeginImageContext(view.bounds.size)
+        UIGraphicsBeginImageContextWithOptions(UIScreen.mainScreen().bounds.size, false, UIScreen.mainScreen().scale)
+        let context = UIGraphicsGetCurrentContext()
+        CGContextSetInterpolationQuality(context, CGInterpolationQuality.High)
         view.layer.renderInContext(UIGraphicsGetCurrentContext()!)
         let viewImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext();
         UIImageWriteToSavedPhotosAlbum(viewImage, nil, nil, nil);
         showButtons()
     }
+ 
+    //    func newMakeSnapshot() {
+//        // Create graphics context
+//        UIGraphicsBeginImageContextWithOptions(UIScreen.mainScreen().bounds.size, false, UIScreen.mainScreen().scale)
+//        let context = UIGraphicsGetCurrentContext()
+//        CGContextSetInterpolationQuality(context, CGInterpolationQuality.High)
+//        
+//        // Draw each view into context
+//        for curView in allViews {
+//            curView.drawViewHierarchyInRect(curView.frame, afterScreenUpdates: false)
+//        }
+//        
+//        // Extract image & end context
+//        let image = UIGraphicsGetImageFromCurrentImageContext()
+//        UIGraphicsEndImageContext()
+//        
+//        // Return image
+//        return image
+//    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -28,14 +28,14 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1fE-nr-rPY">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="44"/>
-                                        <state key="normal" title="Options"/>
+                                        <state key="normal" title="Swap Camera"/>
                                         <connections>
                                             <action selector="optionsButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ccL-jg-9ID"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ec-Um-Nqr">
                                         <rect key="frame" x="300" y="0.0" width="300" height="44"/>
-                                        <state key="normal" title="Share"/>
+                                        <state key="normal" title="Take Photo"/>
                                         <connections>
                                             <action selector="shareButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t9D-Gu-ttN"/>
                                         </connections>
