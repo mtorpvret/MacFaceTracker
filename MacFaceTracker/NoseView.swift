@@ -23,14 +23,13 @@ class NoseView: UIView {
     override func drawRect(rect: CGRect) {
         guard let nose = nose else { return }
         let noseMinX = getPointForMinX(nose)
-        let noseMaxX = getPointForMaxX(nose)
-        let noseSize = distanceFrom(noseMinX, to: noseMaxX) * 1.2
+        let noseSize = distanceFrom(noseMinX, to: getPointForMaxX(nose))
         let centerY = getMinY(nose)
         let noseMinY = centerY - noseSize / 2
         
         let context = UIGraphicsGetCurrentContext()
         CGContextSetFillColorWithColor(context, UIColor.redColor().CGColor)
-        CGContextAddEllipseInRect(context, CGRect(x: noseMinX.x, y: noseMinY, width: noseSize, height: noseSize))
+        CGContextAddEllipseInRect(context, CGRect(x: noseMinX.x * 0.95, y: noseMinY, width: noseSize * 1.1, height: noseSize * 1.1))
         CGContextDrawPath(context, .Fill)
     }
         
